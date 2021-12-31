@@ -25,7 +25,7 @@ data = yf.download(input("Enter the stock symbol to predict... "), start=start_d
 print("Data Length: ", len(data))
 
 #arim prediction goes here
-train = data['Close'][:-1].values
+train = data['Close'].values
 print("\n\n")
 #print(test)
 #exit()
