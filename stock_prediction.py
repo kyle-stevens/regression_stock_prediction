@@ -18,7 +18,7 @@ with warnings.catch_warnings():
 
 #parameter initialization
 start_date = date.today() - timedelta(days=150)
-end_date = date.today()
+end_date = date.today() - timedelta(days=1)
 #90 day period for the training data
 data = yf.download(input("Enter the stock symbol to predict... "), start=start_date, end=end_date)
 
@@ -62,7 +62,7 @@ prediction = model_fit.forecast()
 predictions.append(prediction)
 
 
-print("Predictions for tomorrows Stock Price", predictions)
+print("Predictions for Today's Closing Stock Price", predictions)
 print("Average Prediction Value: ", sum(predictions)/len(predictions))
 
 

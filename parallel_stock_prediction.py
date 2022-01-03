@@ -23,7 +23,7 @@ def run_prediction(training_data, hyper_parameters):
 
 #parameter initialization
 start_date = date.today() - timedelta(days=150)
-end_date = date.today()
+end_date = date.today() - timedelta(days=1)
 #90 day period for the training data
 data = yf.download(input("Enter the stock symbol to predict... "), start=start_date, end=end_date)
 
@@ -51,7 +51,7 @@ pool = mp.Pool(mp.cpu_count())
 predictions = [pool.apply(run_prediction, args=(train, (regress, 1, 0))) for regress in regression_values]
 pool.close()
 
-print("Predictions for tomorrows Stock Price", predictions)
+print("Predictions for Today's Clsoing Stock Price", predictions)
 print("Average Prediction Value: ", sum(predictions)/len(predictions))
 
 
