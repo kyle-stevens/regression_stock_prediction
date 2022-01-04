@@ -13,7 +13,7 @@ with warnings.catch_warnings():
 
 
 def run_prediction(training_data, hyper_parameters):
-    model = ARIMA(training_data, order=hyper_parameters #first hyper parameter value represents the regression amount
+    model = ARIMA(training_data, order=hyper_parameters) #first hyper parameter value represents the regression amount
     model_fit = model.fit()
     prediction = model_fit.forecast()
     return(prediction)
